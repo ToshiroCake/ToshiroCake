@@ -1,0 +1,31 @@
+@font-face {
+  font-family: SnowBlue-OVVwd;
+  src: url("../fonts/SnowBlue-OVVwd.otf");
+}
+
+body {
+  background-color: #3e210a;
+}
+
+.snow-blue {
+  font-family: SnowBlue-OVVwd;
+}
+
+.main-container {
+  background-color: #482c16;
+  border-left: 1px solid #f6db98;
+  border-right: 1px solid #f6db98;
+  color: #f6db98;
+}
+
+.bg-darkbrown {
+  background-color: #482c16;
+}
+
+.bg-lightbrown {
+  background-color: #9f8457;
+}
+
+.border-gold {
+  border: 1px solid #f6db98;
+}

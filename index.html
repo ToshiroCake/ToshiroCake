@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <title>FrostedCake Dividend Dashboard</title>
+  </head>
+  <body>
+    <div class="container main-container">
+      <div class="row pt-5">
+        <div class="col-12 col-sm-6 text-center">
+          <img src="assets/images/Logo.png" alt="logo" width="75px" />
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="text-uppercase snow-blue text-center mt-2">
+            Welcome to Frostedcake
+            <br />
+            Dividend Dashboard
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <div class="p-3">
+          <button
+            class="p-2 px-4 rounded-pill bg-darkbrown border-gold"
+            style="color: #f6db98"
+            id="connect"
+          >
+            Connect Wallet
+          </button>
+        </div>
+        <div class="container-fluid text-center" id="connected_section">
+          <button
+            class="rounded-pill mb-3 px-2 text-truncate container-fluid"
+            id="account"
+            style="background-color: #3e210a; color: #f6db98; border: none"
+          >
+            0x94ba29d58D419BD798B282476db3Dd9d97BA8C23
+          </button>
+          <div
+            class="card text-center container-fluid justify-content-center"
+            style="height: 100px; background-color: #b09564; color: #3e210a"
+          >
+            <div>Your FROSTEDCAKE Balance</div>
+            <div id="balance"></div>
+          </div>
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-12 col-sm-6 p-1">
+                <div
+                  class="card text-center justify-content-center"
+                  style="
+                    height: 100px;
+                    background-color: #b09564;
+                    color: #3e210a;
+                  "
+                >
+                  <div>Total Paid Cake Reward</div>
+                  <div id="total_paid"></div>
+                  <div style="font-size: 1em">$CAKE</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 p-1">
+                <div
+                  class="card text-center justify-content-center"
+                  style="
+                    height: 100px;
+                    background-color: #b09564;
+                    color: #3e210a;
+                  "
+                >
+                  <div>Pending Claimable Reward</div>
+                  <div id="unpaid_earning"></div>
+                  <div style="font-size: 1em">$CAKE</div>
+                </div>
+              </div>
+              <!-- <div class="col-12 col-sm-4 p-1">
+                <div
+                  class="card text-center justify-content-center"
+                  style="
+                    height: 100px;
+                    background-color: #b09564;
+                    color: #3e210a;
+                  "
+                >
+                  <div>Estimated Weekly Reward</div>
+                  <div id="weekly_reward"></div>
+                  <div style="font-size: 0.7em" class="snow-blue">
+                    FROSTEDCAKE
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+          <button
+            class="p-2 px-4 rounded-pill bg-darkbrown border-gold mt-5"
+            style="color: #f6db98"
+            id="claim"
+          >
+            Claim Rewards
+          </button>
+        </div>
+
+        <div class="d-flex flex-column align-items-center pt-5">
+          <div
+            class="rounded-pill py-1 pt-3 px-4 my-3 text-center"
+            style="background-color: #3e210a; font-size: 0.1em"
+          >
+            <h4 class="snow-blue">Total Cake Paid to Hodlers</h4>
+          </div>
+          <div><span id="total_distributed"></span> $CAKE</div>
+          =
+          <div id="cake_price">$ 69689.5</div>
+        </div>
+        <div class="py-5 text-center">
+          *Rewards are auto distributed to your wallets every ** hours/days
+          <br />
+          You can choose to claim the rewards manually by paying gas fee
+        </div>
+        <!-- <div class="mb-5 text-center">
+          Trading Volume = $<input
+            type="text"
+            class="mx-3 rounded-pill bg-lightbrown border-gold"
+          />
+        </div> -->
+        <div class="card col-md-6 border-gold p-0">
+          <div class="card-header text-center bg-darkbrown snow-blue">
+            FROSTEDCAKE STATS
+          </div>
+          <div class="card-body bg-lightbrown">
+            <table class="text-center w-100">
+              <tbody>
+                <tr>
+                  <td>Total Supply</td>
+                  <td id="m_supply"></td>
+                </tr>
+                <tr>
+                  <td>Circulating Supply</td>
+                  <td id="c_supply"></td>
+                </tr>
+                <tr>
+                  <td>Total Burned</td>
+                  <td id="total_burned"></td>
+                </tr>
+                <tr>
+                  <td>Total Rewarded</td>
+                  <td id="total_rewarded"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-auto mt-5 pb-5">
+        <div class="col-12 col-sm-6 text-center order-12">
+          Copyright (c) FROSTEDCAKE
+        </div>
+        <div
+          class="
+            col-12 col-sm-6
+            d-flex
+            flex-row
+            justify-content-between
+            order-1
+          "
+        >
+          <div>Home</div>
+          <div>Whitepaper</div>
+          <div>Buy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="assets/javascript/web3modal.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/javascript/scripts.js"></script>
+  </body>
+</html>
